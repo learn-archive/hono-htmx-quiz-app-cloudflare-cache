@@ -1,1 +1,8 @@
-# hono-htmx-quiz-app-cloudflare-cache
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
