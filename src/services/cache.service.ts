@@ -1,4 +1,4 @@
-import { QuestionType, Quiz } from '../models/quiz';
+import { QuestionType, Quiz } from '../models/quiz.model';
 
 export function getQuizFromCache(): Quiz[] {
   return [
