@@ -1,12 +1,19 @@
-export enum QuestionType {
-  TEXT = 'text',
-}
-
 export type Quiz = {
-  questions: Question[];
+  questionInputText: QuestionInputText[];
+  questionCheckbox: QuestionCheckbox[];
 };
 
-export type Question = {
-  type: QuestionType;
-  answers: string[]
+export type Question = QuestionInputText | QuestionCheckbox;
+
+export type QuestionInputText = {
+  type: 'inputText';
+  step: number;
+  label: string;
+};
+
+export type QuestionCheckbox = {
+  type: 'checkbox',
+  step: number;
+  label: string;
+  answers: string[];
 };

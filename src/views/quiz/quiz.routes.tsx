@@ -1,14 +1,17 @@
 import { Hono } from 'hono';
-import { InputGlobal } from '../../global/input.global';
 import { getQuizFromCache } from '../../services/cache.service';
+import { Quiz } from './quiz.component';
 
 const quiz = new Hono();
 
 quiz.get('/', (c) => {
-  console.log(getQuizFromCache());
+  const quiz = getQuizFromCache();
+  const props = {
+    quiz,
+  };
   return c.render(
     <>
-      <InputGlobal />
+      <Quiz {...props} />
     </>,
   );
 });

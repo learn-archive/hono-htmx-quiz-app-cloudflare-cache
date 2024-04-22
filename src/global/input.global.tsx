@@ -1,5 +1,10 @@
-export function InputGlobal() {
+export function InputGlobal(props: { label: string }) {
   return (
-    <div hx-get="/home/example">Click me !</div>
-  )
+    <label class="form-control w-full max-w-xs">
+      <div class="label">
+        <span class="label-text">{props.label}</span>
+      </div>
+      <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+    </label>
+  );
 }
